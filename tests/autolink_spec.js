@@ -16,6 +16,8 @@ JS.Test.describe('emojify on DOM nodes', function() {
             var a = this.el.querySelectorAll('A');
             this.assertEqual(1, a.length);
             this.assertEqual('https://gitter.im', a[0].innerText);
+            this.assertEqual('hello ', a[0].previousSibling.nodeValue);
+            this.assertEqual(' world', a[0].nextSibling.nodeValue);
         });
 
         this.it('the no http test', function() {
@@ -25,6 +27,21 @@ JS.Test.describe('emojify on DOM nodes', function() {
             this.assertEqual(1, a.length);
             this.assertEqual('www.gitter.im', a[0].innerText);
             this.assertEqual('http://www.gitter.im', a[0].getAttribute('href'));
+        });
+
+        this.it('several on a line', function() {
+            this.el.innerHTML = 'hello https://gitter.im world www.gitter.im';
+            autolink(this.el);
+            var a = this.el.querySelectorAll('A');
+            this.assertEqual(2, a.length);
+            this.assertEqual('https://gitter.im', a[0].innerText);
+            this.assertEqual('https://gitter.im', a[0].getAttribute('href'));
+            this.assertEqual('hello ', a[0].previousSibling.nodeValue);
+            this.assertEqual(' world ', a[0].nextSibling.nodeValue);
+
+            this.assertEqual('www.gitter.im', a[1].innerText);
+            this.assertEqual('http://www.gitter.im', a[1].getAttribute('href'));
+            this.assertEqual(' world ', a[1].previousSibling.nodeValue);
         });
 
     });
