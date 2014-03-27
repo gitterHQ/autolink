@@ -1,6 +1,6 @@
 {
   "name": "autolink",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Autolink http(s) links in your DOM",
   "main": "lib/autolink.js",
   "scripts": {
