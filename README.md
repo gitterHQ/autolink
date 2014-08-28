@@ -2,7 +2,7 @@
 
 Turns links into clickable links
 
-[![Build Status](https://travis-ci.org/gitterHQ/autolink.png?branch=master)](https://travis-ci.org/gitterHQ/autolink) [![Gitter chat](https://badges.gitter.im/gitterHQ/autolink.png)](https://gitter.im/gitterHQ/autolink)
+[![Build Status](https://travis-ci.org/gitterHQ/autolink.svg?branch=master)](https://travis-ci.org/gitterHQ/autolink) [![Gitter chat](https://badges.gitter.im/gitterHQ/autolink.png)](https://gitter.im/gitterHQ/autolink)
 -------------------------------
 
 Autolink is a tiny library for finding hypertext links in your text nodes in your DOM and turning them into clickable links.
